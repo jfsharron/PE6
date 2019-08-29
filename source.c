@@ -25,24 +25,50 @@
 //                        the first one hundred natural numbers and the square 
 //                        of the sum.
 //
-//  Parameters:           x
+//  Parameters:           no parameters are passed; variable upperLimit
+//                        obtained by user input
 //
-//  Returns:              x
+//  Returns:              returns 0 after successful execution; answer output
+//                        to screen
 //  ===========================================================================
 
 #include<stdio.h> 
 #include<string.h> 
 #include<stdlib.h> 
+#include<math.h>
 
 
 //  ===========================================================================
 int main()
 {
+    int upperLimit = 0;  //  user defined variable to mark the upper limit
+    int sum = 0;		 //  sum of the squares of 1 - upperLimit
+    int square = 0;		 //  sum squared of 1 - upperLimit
+    int answer = 0;		 //  difference between square and sum
 
+    //  gather user input (upperLimit)
+    printf("Please enter the upper limit: ");
+    scanf("%d", &upperLimit);
 
+    //  calculate sum
+    for (int i = 0; i <= upperLimit; i++)
+    {
+        sum = sum + (pow(i, 2));
+    }
 
+    //  calculate square
+    for (int i = 0; i <= upperLimit; i++)
+    {
+        square = square + i;
+    }
+    square = (pow(square, 2));
+    
+    answer = (square - sum);
 
-
+    //  print output
+    printf("the sum is: %d\n", sum);
+    printf("the square is: %d\n", square);
+    printf("the answer is: %d\n", answer);
 
 }  //  end main
 //  ===========================================================================
